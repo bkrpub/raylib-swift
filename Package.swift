@@ -27,22 +27,12 @@ let package = Package(
 	    	       .headerSearchPath("include"),
 		       .define("PLATFORM", to: "PLATFORM_RPI"),
        		       .define("GRAPHICS_API_OPENGL_ES2", to: "1"),
-		       .unsafeFlags([
-			    ])
-			    ],
+		    ],
 	    linkerSettings: [
 	    		    .linkedLibrary(":/usr/local/lib/libraylib.a"),
     	    		    .linkedLibrary(":/opt/vc/lib/libbrcmGLESv2.so"),
     	    		    .linkedLibrary(":/opt/vc/lib/libbrcmEGL.so"),
     	    		    .linkedLibrary(":/opt/vc/lib/libbcm_host.so"),			    
-			    
-//			    .linkedLibrary("brcmGLESv2"),
-//			    .linkedLibrary("brcmEGL"),
-//    			    .linkedLibrary("bcm_host") //,
-//			    .unsafeFlags([
-//			    "-L/usr/local/lib",
-//			    "-L/opt/vc/lib",
-//			    ])
 			    ]
 	    ),
         .testTarget(
