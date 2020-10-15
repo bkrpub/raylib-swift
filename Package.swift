@@ -25,15 +25,18 @@ let package = Package(
 	    publicHeadersPath: "include",
 	    cSettings: [
 	    	       .headerSearchPath("include"),
-		       .define("PLATFORM", to: "PLATFORM_RPI")],
-		       
+		       .define("PLATFORM", to: "PLATFORM_RPI"),
+       		       .define("GRAPHICS_API_OPENGL_ES2", to: "1"),
+		       .unsafeFlags([
+			    ])
+			    ],
 	    linkerSettings: [
 	    		    .linkedLibrary("raylib"),
 			    .linkedLibrary("brcmGLESv2"),
 			    .linkedLibrary("brcmEGL"),
     			    .linkedLibrary("bcm_host"),
 			    .unsafeFlags([
-			    "-L../src",
+			    "-L/usr/local/lib",
 			    "-L/opt/vc/lib",
 			    ])
 			    ]
